@@ -1,0 +1,25 @@
+<div>
+  <div *ngFor="let formulario of formularios">
+    <form>
+      <label for="nombre">Nombre:</label>
+      <input type="string" name="nombre" [(ngModel)]="formulario.nombre">
+  
+      <label for="precio">Precio:</label>
+      <input type="number" name="precio" [(ngModel)]="formulario.precio">
+  
+      <label for="unidades">Unidades:</label>
+      <input type="number" name="unidades" [(ngModel)]="formulario.unidades">
+  
+      <label for="metros">Metros:</label>
+      <input type="number" name="metros" [(ngModel)]="formulario.metros">
+  
+      <button (click)="calcular(formulario)">Calcular</button>
+  
+      <p *ngIf="formulario.resultado">El precio por metro es: {{ formulario.resultado }}</p>
+      <p *ngIf="!formulario.resultado"></p>
+    </form>
+  </div>
+  <button (click)="agregarFormulario()">Añadir</button>
+
+</div>
+
